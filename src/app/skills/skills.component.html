@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+    @for (skill of skills; track $index) {
+    <div class="mb-4">
+        <div class="flex items-center justify-between">
+          <h2>{{ skill.name }}</h2>
+          <span>{{ skill.level }}%</span>
+        </div>
+        <div class="h-2 w-full bg-gray-200 rounded-full">
+          <div [style.width.%]="skill.level" class="h-full bg-green-500 rounded-full"></div>
+        </div>
+      </div>
+    }
+</body>
+</html>

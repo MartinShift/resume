@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Work Experience</title>
+</head>
+<body>
+    <h1 class="text-4xl font-bold">Work Experience</h1>
+    <div class="space-y-4">
+        @for (workExperience of workExperiences; track $index) 
+        {
+            <div class="bg-white p-4 shadow">
+                <h2 class="text-2xl font-bold">{{workExperience.companyName}}</h2>
+                <h3 class="text-lg font-semibold">{{workExperience.position}}</h3>
+                <p class="text-gray-600">{{workExperience.description}}</p>
+                <p class="text-gray-600">{{workExperience.startDate}} - {{workExperience.endDate}}</p>
+            </div>
+        }
+    </div>
+</body>
+</html>

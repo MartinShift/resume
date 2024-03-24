@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <img [src]="summary.image" alt="Your Name" class="w-32 h-32 rounded-full">
+      
+        <div class="mt-4">
+            @for (link of summary.links; track $index) 
+            {
+                <div class="mb-2">
+                    <a [href]="link.url" target="_blank" class="text-blue-500 hover:underline">{{ link.name }}</a>
+                </div>
+            }
+        </div>
+    </body>
+</html>
