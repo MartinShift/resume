@@ -3,13 +3,13 @@
     <head>
     </head>
     <body>
-        <img [src]="summary.image" alt="Your Name" class="w-32 h-32 rounded-full">
+        <img [src]="summary.image" alt="Your Name" class="w-32 h-32 rounded-full" [ngStyle]="{'opacity': summary.image ? 1 : 0.5}">
       
         <div class="mt-4">
             @for (link of summary.links; track $index) 
             {
                 <div class="mb-2">
-                    <a [href]="link.url" target="_blank" class="text-blue-500 hover:underline">{{ link.name }}</a>
+                    <a [href]="link.url" target="_blank" [ngClass]="{'text-blue-500 hover:underline': !link.url.includes('github'), 'text-red-500 hover:underline': link.url.includes('github')}">{{ link.name }}</a>
                 </div>
             }
         </div>

@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { Link } from './link.model';
 import { Summary } from './summary.model';
+import { NgClass } from '@angular/common';
+import { NgStyle } from '@angular/common';
+
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css',],
   standalone: true,
+  imports: [NgClass, NgStyle]
 })
 export class SummaryComponent {
   summary: Summary;
