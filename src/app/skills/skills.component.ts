@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Skill } from './skill.model';
+import { SkillsService } from './skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,13 +8,12 @@ import { Skill } from './skill.model';
   styleUrls: ['./skills.component.css'],
   standalone: true,
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
   skills: Skill[];
 
-  constructor() {
-    this.skills = [
-      new Skill('JavaScript', 90),  
-      new Skill('Angular', 70),  
-    ];
+  constructor(private skillsService: SkillsService) { this.skills = []; }
+
+  ngOnInit(): void {
+    this.skills = this.skillsService.getSkills();
   }
 }
